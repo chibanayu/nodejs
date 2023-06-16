@@ -20,8 +20,8 @@
                     <td>
                         <%= value.email %>
                     </td>
-                    <td><button onclick="window.location.reload();">更新</button> </td>
-                    <td><button onclick="del(event)">削除</button></td>
+                    <td><a href="/edit/<%= value.id %>"><button>更新</button></a></td>
+                    <td><a href="/delete/<%= value.id %>"><button>削除</button></a></td>
                 </tr>
                 <% }); %>
         </table>
@@ -87,16 +87,6 @@
             let name = document.getElementById('nameText01');
             let email = document.getElementById('nameText02');
             checkButton.addEventListener('click', buttonClick);
-            //更新ボタン
-            document.addEventListener('DOMContentLoaded', function () {
-                document.getElementById("btn").addEventListener("click", function () {
-                    window.location.reload();
-                })
-            });
-            //削除ボタン
-            const del = (event) => {
-                event.target.closest('tr').remove();
-            }
         </script>
         </body>
 </html>
