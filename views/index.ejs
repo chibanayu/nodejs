@@ -65,6 +65,7 @@
             // 実務課題01:IDで検索したオブジェクトクラスを入力フォームに表示して下さい。
             let user = JSON.parse('<%= JSON.stringify(user) %>'.replace(/&#34;/g, '"'));
 
+            //ボタンを押すと名前とメールを表示する
             function buttonClick() {
                 let input = document.getElementById('nameText');
                 let id = input.value
@@ -77,7 +78,7 @@
                 console.log(member);
                 });
             }
-            
+            // 変数宣言
             let checkButton = document.getElementById('checkButton');
             let name = document.getElementById('nameText01');
             let email = document.getElementById('nameText02');
