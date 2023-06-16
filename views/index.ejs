@@ -46,6 +46,7 @@
             以下使用する際は<%#の「#」部分を「=」に変更するよう気をつけてください。%>
             let 変数名 = JSON.parse('<%# JSON.stringify(プロパティ名) %>'.replace(/&#34;/g, '"'));
             */
+           //テスト
             let arrayComment = JSON.parse('<%= JSON.stringify(comment) %>'.replace(/&#34;/g, '"'));
             console.log(arrayComment);
             arrayComment.forEach(function (element) {
