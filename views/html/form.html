@@ -20,27 +20,37 @@
         </form>
     </body>
     <script>
+        //ボタンがクリックされたとき
         function buttonClick() {
-            let email = document.getElementById('email');
-            let reg2 = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/
+            //nameの変数宣言
             let name = document.getElementById('name');
+            //半角英字とドットの正規表現
             let reg1 = /^[a-zA-Z.]+$/
+            //emailの変数宣言
+            let email = document.getElementById('email');
+            //メールの正規表現
+            let reg2 = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/
+            //nameが空だった場合
             if (name.value == "") {
                 alert("名前が未入力です。");
                 return false;
             }
+            //nameが正しく入力されていなかった場合
             if (!name.value.match(reg1)) {
                 alert("名前を正しく入力してください。");
                 return false;
             }
+            //emailがからだった場合
             if (email.value == "") {
                 alert("メールアドレスが未入力です。");
                 return false;
             }
+            //emailが正しく入力されていなかった場合
             if (!email.value.match(reg2)) {
-                alert("メールアドレス正しくを入力してください。");
+                alert("メールアドレスを正しく入力してください。");
                 return false;
             }
+            //trueだったら送信される
             return true;
         }
     </script>
