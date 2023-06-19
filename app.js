@@ -66,6 +66,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+  console.log(req.body);
   const sql = "INSERT INTO users SET ?";
   con.query(sql, req.body, function (err, result, fields) {
     if (err) throw err;

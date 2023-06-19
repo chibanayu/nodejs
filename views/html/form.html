@@ -7,17 +7,41 @@
     <body>
         <h1>入力フォーム</h1>
         <!--ここに追加-->
-        <div message></div>
         <form action="/" method="POST">
             <div class="form_item">
                 <label for="name">name</label>
                 <input type="text" id="name" name="name" value="">
             </div>
             <div class="form_item">
-                <label for="mail">email</label>
-                <input type="text" id="mail" name="mail" value="">
+                <label for="email">email</label>
+                <input type="text" id="email" name="email" value="">
             </div>
-            <button type="submit" id="submit">送信</button>
+            <button type="submit" id="submit" onclick="return buttonClick()">送信</button>
         </form>
     </body>
+    <script>
+        function buttonClick() {
+            let email = document.getElementById('email');
+            let reg2 = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/
+            let name = document.getElementById('name');
+            let reg1 = /^[a-zA-Z.]+$/
+            if (name.value == "") {
+                alert("名前が未入力です。");
+                return false;
+            }
+            if (!name.value.match(reg1)) {
+                alert("名前を正しく入力してください。");
+                return false;
+            }
+            if (email.value == "") {
+                alert("メールアドレスが未入力です。");
+                return false;
+            }
+            if (!email.value.match(reg2)) {
+                alert("メールアドレス正しくを入力してください。");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </html>
