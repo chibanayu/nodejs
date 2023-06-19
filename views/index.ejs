@@ -89,33 +89,6 @@
             let name = document.getElementById('nameText01');
             let email = document.getElementById('nameText02');
             checkButton.addEventListener('click', buttonClick);
-
-            //実務課題03
-            let submit = document.getElementById('submit');
-            submit.addEventListener('click', function (event) {
-                let mail = document.getElementById('mail');
-                let reg2 = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
-                let name1 = document.getElementById('name');
-                let message = [];
-                let reg1 = /^[a-zA-Z.]+$/
-                if (red1.match(/^[a-zA-Z.]+$/)) {
-                    message.push("");
-                } else {
-                    message.push("正しく入力してください。");
-                }
-                if (name.value == "") {
-                    message.push("氏名が未入力です。");
-                }
-                if (mail.value == "") {
-                    message.push("メールアドレスが未入力です。");
-                }
-                if (message.length > 0) {
-                    alert(message);
-                    return;
-            }
-        });
-
-
         </script>
         </body>
 </html>
